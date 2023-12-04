@@ -69,6 +69,7 @@ namespace Test.Controllers
 		{
 			var apartment = await service.GetById(id);
 			apartment.Name = createApartmentDto.Name;
+			service.Put(apartment);
 			return Ok(new { Message = "Genre updated successfully", apartment });
 
 

@@ -69,6 +69,7 @@ namespace Test.Controllers
 			building.Name = createBuildingDto.Name;
 			building.FloorCount = createBuildingDto.FloorCount;
 			building.ApartmentCount= createBuildingDto.ApartmentCount;
+			buildingService.Update(building);
 			return Ok(new{ Message = "Genre updated successfully",building } );
 		}
 		[HttpDelete(template: "{id}")]

@@ -5,6 +5,10 @@ using System.Runtime.Intrinsics;
 using Test.Data;
 using Test.Services.ApartmentService;
 using Test.Services.buildingservice;
+using Test.Services.ExpensesCategoryService;
+using Test.Services.NewFolder;
+using Test.Services.ReciptService;
+using Test.Services.ResidentInfoService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +25,10 @@ options.UseSqlServer(connectionString)
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddTransient<IBuildingService, BuildingService>();
 builder.Services.AddTransient<IApartmentService, ApartmentService>();
+builder.Services.AddTransient<IExpensesCategoryService, ExpensesCategoryService>();
+builder.Services.AddTransient<IExpensesService, ExpensesService>();
+builder.Services.AddTransient<IReciptService, ReciptService>();
+builder.Services.AddTransient<IResidentInfo, ResidentInfoService > ();
 builder.Services.AddCors();
 builder.Services.AddSwaggerGen(options =>
 {

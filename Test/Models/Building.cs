@@ -8,8 +8,7 @@
 		public string Address { get; set; }
 		public int ApartmentCount { get; set; }
 		public int FloorCount { get; set; }
-		public ICollection<Expenses> Expenses { get; set; }=new List<Expenses>();
-		public ICollection<Apartment>Apartment { get; set; } = new List<Apartment>();
+		
 
 	}
 }
